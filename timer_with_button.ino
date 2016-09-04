@@ -4,7 +4,7 @@ By Matt */
 # define intervalTime 60000 //set interval time in milliseconds
 
 int IRledPin =  13; // LED connected to digital pin 13
-int buttonPin = 2; // push button connected to pin 2
+int buttonPin = 2; // push button connected to digital pin 2
 
 volatile int buttonState = 0;  // variable for reading pushbutton status
 

@@ -1,17 +1,20 @@
-/*Nikon D40 Intervalometer
-By Matt */
+/*
+Nikon D40 Intervalometer
+By Matt 
+15.10.2016
+*/
 
-# define intervalTime 60000 //set interval time in milliseconds
+# define interval 30 //set interval time in seconds
 
+int intervalTime = (interval * 1000); //convert interval from seconds to milliseconds
 int IRledPin =  13; // LED connected to digital pin 13
-int buttonPin = 2; // push button connected to digital pin 2
-
+int buttonPin = 2; // push button connected to pin 2
 volatile int buttonState = 0;  // variable for reading pushbutton status
 
-void setup()   { // initialize the IR digital pin as an output:
-  pinMode(IRledPin, OUTPUT); // initialize the button as an input
-  pinMode(buttonPin, INPUT); // attach an interrupt to the ISR vector
-  attachInterrupt(0, pinISR, CHANGE); // declare interrupt routine
+void setup() {
+  pinMode(IRledPin, OUTPUT); // initialize the IR digital pin as an output:
+  pinMode(buttonPin, INPUT); // initialize the button as an input
+  attachInterrupt(0, pinISR, CHANGE); // attach an interrupt to the ISR vector
   Serial.begin(9600); // start serial communication for debugging
 }
 

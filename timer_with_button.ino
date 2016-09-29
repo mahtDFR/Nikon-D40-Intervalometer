@@ -65,7 +65,6 @@ void SendNikonCode() {
   delayMicroseconds(3440);
   pulseIR(480);
 
-
   delay(65); // wait 65 milliseconds before sending it again
 
   pulseIR(2000);
